@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BtoC向けLPテンプレート</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+        }
+        
+        .section {
+            padding: 40px 20px;
+            border-bottom: 3px solid #e9ecef;
+        }
+        
+        .section-title {
+            background: #007bff;
+            color: white;
+            padding: 12px 20px;
+            margin: -40px -20px 30px -20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border: 2px dashed #6c757d;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .image-placeholder {
+            background: #e9ecef;
+            border: 3px solid #6c757d;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+            color: #495057;
+        }
+        
+        .headline {
+            font-size: 32px;
+            font-weight: bold;
+            color: #dc3545;
+            text-align: center;
+            margin: 20px 0;
+            line-height: 1.2;
+        }
+        
+        .subheadline {
+            font-size: 20px;
+            color: #28a745;
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .cta-button {
+            background: #ffc107;
+            border: 3px solid #fd7e14;
+            color: #000;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            margin: 20px auto;
+            display: block;
+            text-align: center;
+            width: fit-content;
+        }
+        
+        .checklist {
+            background: #f8f9fa;
+            border-left: 4px solid #17a2b8;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .checklist h4 {
+            color: #17a2b8;
+            margin-bottom: 10px;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .checklist li {
+            margin: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .checklist li:before {
+            content: "□";
+            position: absolute;
+            left: 0;
+            color: #17a2b8;
+            font-weight: bold;
+        }
+        
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .benefit-item {
+            background: #e7f3ff;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .testimonial {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .price-section {
+            background: #f8d7da;
+            border: 3px solid #dc3545;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #6c757d;
+            font-size: 24px;
+        }
+        
+        .special-price {
+            color: #dc3545;
+            font-size: 36px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .guarantee {
+            background: #d1ecf1;
+            border: 2px solid #17a2b8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        
+        .expert-recommendation {
+            background: #e2e3e5;
+            border: 3px solid #6c757d;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .countdown {
+            background: #f5c6cb;
+            border: 3px solid #dc3545;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .features-comparison {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .features-comparison th,
+        .features-comparison td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .features-comparison th {
+            background: #e9ecef;
+            font-weight: bold;
+        }
+        
+        .our-product {
+            background: #d4edda;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- セクション1：ファーストビュー -->
+        <div class="section">
+            <div class="section-title">セクション1：ファーストビュー</div>
+            
+            <div class="headline">
+                【ヘッドコピー】<br>
+                たった30日で-10kg？運動なしで理想体型に
+            </div>
+            
+            <div class="subheadline">
+                【セカンドコピー】<br>
+                利用者の95%が効果を実感
+            </div>
+            
+            <div class="image-placeholder">
+                写真
+            </div>
+            
+            <div class="cta-button">
+                【CTAボタン①】詳細を確認する
+            </div>
+            
+            <div class="checklist">
+                <h4>📋 必要素材チェックリスト</h4>
+                <ul>
+                    <li>インパクトのある数値データ（効果・満足度など）</li>
+                    <li>商品の高解像度画像</li>
+                    <li>ビフォーアフター画像（使用許可確認済み）</li>
+                    <li>キャッチコピーのA/Bテスト用バリエーション（2-3パターン）</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- セクション2：問題提起・共感 -->
+        <div class="section">
+            <div class="section-title">セクション2：問題提起・共感</div>
+            
+            <div class="card">
+                <h3>【悩み共感】</h3>
+                <p><strong>こんなお悩みありませんか？</strong></p>
+                <ul style="text-align: left; max-width: 400px; margin: 20px auto;">
+                    <li>悩みA（ターゲットの具体的な悩み）</li>
+                    <li>悩みB（深刻度の高い悩み）</li>
+                    <li>悩みC（よくある悩み）</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>【共感メッセージ】</h3>
+                <p>多くの方が同じ悩みを抱えています...<br>
+                ターゲットに寄り添う共感文</p>
+            </div>
+            
+            <div class="card">
+                <h3>【解決策の予告】</h3>
+                <p><strong>でも、もうその悩みとはお別れです</strong></p>
+            </div>
+            
+            <div class="checklist">
+                <h4>📋 必要素材チェックリスト</h4>
+                <ul>
+                    <li>ターゲット調査結果（アンケート・インタビュー）</li>
+                    <li>競合他社のLP調査（悩み訴求の参考）</li>
+                    <li>既存顧客の購入前の悩み（実際の声）</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- セクション3：権威性・信頼構築 -->
+        <div class="section">
+            <div class="section-title">セクション3：権威性・信頼構築</div>
+            
+            <div class="card">
+                <h3>【開発者・会社紹介】</h3>
+                <div class="image-placeholder">
+                    写真
+                </div>
+                <p>経歴・専門性<br>
+                会社実績・受賞歴</p>
+            </div>
+            
+            <div class="card">
+                <h3>【メディア掲載実績】</h3>
+                <p><strong>各種メディアで紹介されました</strong></p>
+                <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin: 20px 0;">
+                    <div style="border: 2px solid #ccc; padding: 10px; margin: 5px;">TV番組ロゴ</div>
+                    <div style="border: 2px solid #ccc; padding: 10px; margin: 5px;">雑誌ロゴ</div>
+                    <div style="border: 2px solid #ccc; padding: 10px; margin: 5px;">Webメディアロゴ</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>【商品・サービス発表】</h3>
+                <p><strong>その解決策がこちらです</strong></p>
+                <h2 style="color: #dc3545;">商品名 + キャッチフレーズ</h2>
+            </div>
+            
+            <div class="checklist">
+                <h4>📋 必要素材チェックリスト</h4>
+                <ul>
+                    <li>代表者の鮮明な顔写真（プロ撮影推奨）</li>
+                    <li>会社・代表者の実績資料</li>
+                    <li>メディア掲載許可書</li>
+                    <li>掲載記事の正確な引用許可</li>
+                    <li>第三者認証・資格証明書</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- セクション4：効果実証・お客様の声 -->
+        <div class="section">
+            <div class="section-title">セクション4：効果実証・お客様の声</div>
+            
+            <div class="card">
+                <h3>【利用実績】</h3>
+                <div style="font-size: 36px; color: #dc3545; font-weight: bold;">●万人が体験</div>
+                <div style="font-size: 28px; color: #28a745; font-weight: bold;">満足度●%達成</div>
+            </div>
+            
+            <div class="testimonial">
+                <h4>【お客様の声 1】</h4>
+                <div class="image-placeholder" style="width: 100px; height: 100px; margin: 10px auto; font-size: 14px;">
+                    写真
+                </div>
+                <p><strong>30代女性・東京都</strong></p>
+                <p>★★★★★</p>
+                <p>使用前後の具体的変化についての体験談...</p>
+            </div>
+            
+            <div class="testimonial">
+                <h4>【お客様の声 2】</h4>
+                <div class="image-placeholder" style="width: 100px; height: 100px; margin: 10px auto; font-size: 14px;">
+                    写真
+                </div>
+                <p><strong>40代男性・大阪府</strong></p>
+                <p>★★★★★</p>
+                <p>使用前後の具体的変化についての体験談...</p>
+            </div>
+            
+            <div class="card">
+                <h3>【科学的根拠】</h3>
+                <div class="image-placeholder">
+                    写真
+                </div>
+            </div>
+            
+            <div class="checklist">
+                <h4>📋 必要素材チェックリスト</h4>
+                <ul>
+                    <li>顧客の体験談（最低10名分収集、5-6名選定）</li>
+                    <li>顧客写真の使用許可書</li>
+                    <li>効果に関する具体的数値データ</li>
+                    <li>第三者機関の検証結果（あれば）</li>
+                    <li>使用前後の写真（許可済み）</li>
+                    <li>レビューの星評価スクリーンショット</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- セクション5：商品詳細・差別化 -->
+        <div class="section">
+            <div class="section-title">セクション5：商品詳細・差別化</div>
+            
+            <div class="card">
+                <h3>【商品の3つの特徴】</h3>
+                <p><strong>なぜ効果があるのか？理由を明確に</strong></p>
+                <div class="benefits">
+                    <div class="benefit-item">
+                        <h4>特徴1</h4>
+                        <p>●●だから効果的</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>特徴2</h4>
+                        <p>●●で安心・安全</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>特徴3</h4>
+                        <p>●●で続けやすい</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>【競合との違い】</h3>
+                <table class="features-comparison">
+                    <tr>
+                        <th>比較項目</th>
+                        <th>他社A</th>
+                        <th>他社B</th>
+                        <th class="our-product">当商品</th>
+                    </tr>
+                    <tr>
+                        <td>価格</td>
+                        <td>高い</td>
+                        <td>普通</td>
+                        <td class="our-product">お得</td>
+                    </tr>
+                    <tr>
+                        <td>効果</td>
+                        <td>普通</td>
+                        <td>普通</td>
+                        <td class="our-product">高い</td>
+                    </tr>
+                    <tr>
+                        <td>安全性</td>
+                        <td>普通</td>
+                        <td>低い</td>
+                        <td class="our-product">高い</td>
+                    </tr>
+                    <tr>
+                        <td>サポート</td>
+                        <td>なし</td>
+                        <td>普通</td>
+                        <td class="our-product">充実</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="card">
+                <h3>【得られる未来】</h3>
+                <p><strong>あなたが手に入れる5つの変化</strong></p>
+                <ul style="text-align: left; max-width: 500px; margin: 20px auto;">
+                    <li>ベネフィット1（具体的な変化）</li>
+                    <li>ベネフィット2（生活の改善）</li>
+                    <li>ベネフィット3（自信・満足感）</li>
+                    <li>ベネフィット4（周囲の反応）</li>
+                    <li>ベネフィット5（長期的な価値）</li>
+                </ul>
+            </div>
+            
+            <div class="checklist">
+                <h4>📋 必要素材チェックリスト</h4>
+                <ul>
+                    <li>商品の技術的特徴・成分情報</li>
+                    <li>競合他社の価格・特徴調査</li>
+                    <li>差別化ポイントの根拠資料</li>
+                    <li>顧客が実際に得た結果の事例</li>
+                    <li>商品詳細画像（複数角度）</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- セクション6：価格・オファー -->
+        <div class="section">
+            <div class="section-title">セクション6：価格・オファー</div>
+            
+            <div class="price-section">
+                <h3>【価格発表】</h3>
+                <p>一般的な類似サービス：<span style="font-size: 20px;">●●,●●●円</span></p>
+                <p>当商品の通常価格：<span class="original-price">●●,●●●円</span></p>
+                <div style="font-size: 24px; margin: 20px 0;">↓</div>
+                <div class="special-price">今回限定価格：●,●●●円</div>
+                
+                <div style="margin-top: 30px;">
+                    <h4>【価格の理由付け】</h4>
+                    <p>なぜこの価格で提供できるのか</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>【豪華特典】</h3>
+                <p><strong>今だけの限定特典パッケージ</strong></p>
+                <div style="text-align: left; max-width: 400px; margin: 20px auto;">
+                    <p>• 特典1：●●●（●,●●●円相当）</p>
+                    <p>• 特典2：●●●（●,●●●円相当）</p>
+                    <p>• 特典3：●●●（●,●●●円相当）</p>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 20px; background: #fff3cd; border-radius: 8px;">
+                    <h4>【総額表示】</h4>
+                    <p>通常なら<span style="text-decoration: line-through;">●●,●●●円相当</span></p>
+                    <p style="font-size: 24px; color: #dc3545; font-weight: bold;">今だけ●,●●●円</p>
+                </div>
+            </div>
+            
+            <div class="checklist">
+                <h4>📋 必要素材チェックリスト</h4>
+                <ul>
+                    <li>競合他社の価格調査結果</li>
+                    <li>原価計算・利益率の確認</li>
+                    <li>特典の詳細仕様・価値算定</li>
+                    <li>特典商品の画像・説明資料</li>
+                    <li>限定価格の法的表示確認</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- セクション7：緊急性・希少性 -->
+        <div class="section">
+            <div class="section-title">セクション7：緊急性・希少性</div>
+            
+            <div class="countdown">
+                【限定性】<br>
+                先着●●●名様限定<br>
+                または<br>
+                ●月●日まで
+            </div>
+            
+            <div class="card">
+                <h3>【在庫・時間表示】</h3>
+                <div style="background: #333; color: #fff; padding: 20px; border-radius: 8px; font-size: 24px; font-weight: bold; margin: 20px 0;">
+                    【カウントダウンタイマー】<br>
+                    00:23:45:12
+                </div>
+                <div style="background: #dc3545; color: #fff; padding: 15px; border-radius: 8px; font-size: 20px; margin: 10px 0;">
+                    残り12個
+                </div>
+                <p>申込状況の可視化</p>
+            </div>
+            
+            <div class="cta-button">
+                【CTAボタン②】今すぐ申し込む
+            </div>
+            
+            <div class="checklist">
+                <h4>📋 必要素材チェックリスト</h4>
+                <ul>
+                    <li>限定数・期間の根拠資料</li>
+                    <li>景品表示法準拠の確認</li>
+                    <li>カウントダウン機能の実装準備</li>
+                    <li>在庫管理システムとの連携確認</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- セクション8：不安解消・保証 -->
+        <div class="section">
+            <div class="section-title">セクション8：不安解消・保証</div>
+            
+            <div class="card">
+                <h3>【よくある質問】</h3>
+                <div class="faq-item">
+                    <div class="faq-question">Q1. 効果はどのくらいで現れますか？</div>
+                    <p>A. 個人差はありますが、多くの方が●週間以内に...</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q2. 安全性に問題はありませんか？</div>
+                    <p>A. 第三者機関での検査済みで...</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q3. 配送・支払い方法は？</div>
+                    <p>A. 全国送料無料で、お支払いは...</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q4. サポート体制はありますか？</div>
+                    <p>A. 専門スタッフが●時〜●時まで...</p>
+                </div>
+            </div>
+            
+            <div class="guarantee">
+                <h3>【安心保証】</h3>
+                <ul style="text-align: left;">
+                    <li>●日間返金保証</li>
+                    <li>効果保証制度</li>
+                    <li>アフターサポート体制</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>【認定・資格】</h3>
+                <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                    <div style="border: 2px solid #28a745; padding: 15px; margin: 10px;">ISO認定</div>
+                    <div style="border: 2px solid #28a745; padding: 15px; margin: 10px;">GMP認定</div>
+                    <div style="border: 2px solid #28a745; padding: 15px; margin: 10px;">特許取得</div>
+                </div>
+            </div>
+            
+            <div class="checklist">
+                <h4>📋 必要素材チェックリスト</h4>
+                <ul>
+                    <li>過去の問い合わせ履歴分析</li>
+                    <li>返金保証の利用規約</li>
+                    <li>サポート体制の詳細</li>
+                    <li>各種認定証・検査結果証明書</li>
+                    <li>特許・商標の登録証</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- セクション9：最終押し・専門家推薦 -->
+        <div class="section">
+            <div class="section-title">セクション9：最終押し・専門家推薦</div>
+            
+            <div class="expert-recommendation">
+                <h3>【専門家の推薦】</h3>
+                <div class="image-placeholder" style="width: 100px; height: 100px; margin: 0 auto 20px;">
+                    写真
+                </div>
+                <p><strong>●●医師 / ●●大学教授</strong></p>
+                <p>「この商品は科学的根拠に基づいて開発されており、安全性と効果の両面で優れています。多くの患者さんにお勧めしたい商品です。」</p>
+                <p style="text-align: right; margin-top: 15px;"><em>医学博士 ●●●●</em></p>
+            </div>
+            
+            <div class="card">
+                <h3>【最後のメッセージ】</h3>
+                <p><strong>今すぐ行動すべき理由</strong></p>
+                <p>変化への希望と励まし</p>
+                <p><strong>限定性の再確認</strong></p>
+            </div>
+            
+            <div class="cta-button">
+                【CTAボタン③】今すぐ人生を変える
+            </div>
+            
+            <div class="checklist">
+                <h4>📋 必要素材チェックリスト</h4>
+                <ul>
+                    <li>専門家の推薦文（署名・印鑑付き）</li>
+                    <li>専門家の顔写真・経歴確認</li>
+                    <li>推薦の対価・関係性の明示</li>
+                    <li>最終メッセージのトーン確認</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 追加チェックリスト -->
+        <div class="section">
+            <div class="section-title">📱 実装・最適化チェックリスト</div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="checklist">
+                    <h4>📱 モバイル最適化</h4>
+                    <ul>
+                        <li>各セクションのスマホ表示確認</li>
+                        <li>CTAボタンの親指操作ゾーン配置</li>
+                        <li>画像の軽量化・遅延読み込み</li>
+                        <li>読み込み速度3秒以内</li>
+                        <li>フォントサイズ16px以上</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist">
+                    <h4>🔍 A/Bテスト準備</h4>
+                    <ul>
+                        <li>ヘッドコピー（3パターン）</li>
+                        <li>CTAボタンの色・文言（2パターン）</li>
+                        <li>価格表示方法（2パターン）</li>
+                        <li>お客様の声の配置（2パターン）</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist">
+                    <h4>📊 効果測定設定</h4>
+                    <ul>
+                        <li>Googleアナリティクス設定</li>
+                        <li>コンバージョンタグ設定</li>
+                        <li>ヒートマップツール導入</li>
+                        <li>スクロール率計測設定</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
